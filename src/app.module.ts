@@ -21,8 +21,9 @@ import * as path from "path";
 @Module({
   imports: [
       ConfigModule.forRoot({
-          // envFilePath: `.${process.env.NODE_ENV}.env`
-          envFilePath: `.production.env`
+        envFilePath: `.${process.env.NODE_ENV}.env`
+        //   envFilePath: `.production.env`
+        // envFilePath: `.development.env`
       }),
       TypeOrmModule.forRoot({
           type: 'postgres',
