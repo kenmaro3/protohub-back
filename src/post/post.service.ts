@@ -56,7 +56,8 @@ export class PostService{
         })
         if(originalPost){
             // return originalPost
-            post.title = originalPost.title
+            post.title = forkDto.title
+            post.description = forkDto.description
             post.text = originalPost.text
             post.user = Number(forkDto.destination_user_id)
             post.date_and_time_published = new Date();
