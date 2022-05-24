@@ -23,6 +23,18 @@ export class User{
     @Column({unique: true})
     email: string
 
+    @Column({nullable: true})
+    description: string
+
+    @Column({nullable: true})
+    github: string
+
+    @Column({nullable: true})
+    twitter: string
+
+    @Column({nullable: true})
+    website: string
+
     @Column()
     password: string;
 

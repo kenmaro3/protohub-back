@@ -13,4 +13,16 @@ export class UpdateUserDto{
     @IsEmail()
     @IsString()
     readonly email: string;
+
+    @IsString()
+    readonly description: string;
+
+    @IsString()
+    readonly github: string;
+
+    @IsString()
+    readonly twitter: string;
+
+    @IsString()
+    readonly website: string;
 }

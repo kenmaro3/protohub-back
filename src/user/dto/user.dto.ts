@@ -16,4 +16,16 @@ export class UserDto{
     @MaxLength(20, {message: 'Maximum length of password is 20'})
     @IsString()
     readonly password: string;
+
+    @IsString()
+    readonly description: string;
+
+    @IsString()
+    readonly github: string;
+
+    @IsString()
+    readonly twitter: string;
+
+    @IsString()
+    readonly website: string;
 }

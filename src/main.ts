@@ -22,7 +22,7 @@ async function bootstrap() {
   //app.enableCors({credentials: true, origin: process.env.CLIENT_URL});
   app.enableCors({
     //origin: 'http://localhost:3000',
-    origin: process.env.CLIENT_URL,
+    origin: [process.env.CLIENT_URL, "https://www.protohub.tech"],
     //allowedHeaders: 'Origin, X-Requested-With, Content-Type, Access-Control-Allow-Origin,  Accept',
     credentials: true,
   });

@@ -25,10 +25,14 @@ export class UserService{
         }
         const user_name = updateUserDto.user_name
         const email = updateUserDto.email
+        const description = updateUserDto.description
+        const github = updateUserDto.github
+        const twitter = updateUserDto.twitter
+        const website = updateUserDto.website
         if(picturePath){
-            await this.usersRepository.update(updateUserDto.user_id, {user_name, email, profile_picture: picturePath})
+            await this.usersRepository.update(updateUserDto.user_id, {user_name, email, description, profile_picture: picturePath, github, twitter, website})
         }else{
-            await this.usersRepository.update(updateUserDto.user_id, {user_name, email})
+            await this.usersRepository.update(updateUserDto.user_id, {user_name, email, description, github, twitter, website})
         }
 
         return this.getById(updateUserDto.user_id)

@@ -1,11 +1,11 @@
 version: "3.7"
 services:
- api:
-   container_name: backend
-   build: .
-   tty: true
-   ports:
-     - "5101:5101"
+  #api:
+  #  container_name: backend
+  #  build: .
+  #  tty: true
+  #  ports:
+  #    - "5101:5101"
 
  pgdb:
    image: postgres:latest
