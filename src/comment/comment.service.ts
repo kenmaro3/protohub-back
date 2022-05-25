@@ -19,7 +19,12 @@ export class CommentService{
         comment.post = commentDto.post_id
         comment.date_and_time_published = new Date()
         if(commentDto.reproducibility != "null"){
-            comment.reproducibility = Boolean(commentDto.reproducibility)
+            if(commentDto.reproducibility.toLowerCase() === "true"){
+                comment.reproducibility = true;
+            }
+            else if(commentDto.reproducibility.toLowerCase() === "false"){
+                comment.reproducibility = false;
+            }
         }
         if(commentDto.time_cost != "null"){
             comment.time_cost = commentDto.time_cost
