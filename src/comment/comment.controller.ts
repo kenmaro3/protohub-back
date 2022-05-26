@@ -16,6 +16,7 @@ import {
 } from "@nestjs/common";
 import {CommentService} from "./comment.service";
 import {CommentDto} from "./dto/comment.dto";
+import { UpdateCommentDto } from "./dto/update-comment.dto";
 import {AuthGuard} from "../authorization/auth.guard";
 
 @Controller('comments')
@@ -28,6 +29,11 @@ export class CommentController{
     @Post()
     create(@Body() commentDto: CommentDto){
         return this.commentService.createComment(commentDto)
+    }
+    @UsePipes(ValidationPipe)
+    @Post('/update')
+    update(@Body() updateCommentDto: UpdateCommentDto){
+        return this.commentService.updateComment(updateCommentDto)
     }
 
     @Delete('/comment/:comment_id')
