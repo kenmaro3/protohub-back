@@ -8,9 +8,9 @@ export class Like{
     @PrimaryGeneratedColumn()
     id: number;
 
-    @ManyToOne(() => User, (user) => user.liked_posts, {eager: true})
+    @ManyToOne(() => User, (user) => user.liked_posts, {eager: true, onDelete:'CASCADE'})
     user: number;
 
-    @ManyToOne(() => Post, (post) => post.user_likes, {eager: true})
+    @ManyToOne(() => Post, (post) => post.user_likes, {eager: true, onDelete:'CASCADE'})
     post: number;
 }

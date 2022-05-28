@@ -41,7 +41,7 @@ export class Post{
     @Column({nullable: true})
     post_image: string;
 
-    @ManyToOne(() => User, (user) => user.posts, {eager: true})
+    @ManyToOne(() => User, (user) => user.posts, {eager: true, onDelete:'CASCADE'})
     user: number
 
     @OneToMany(() => Comment, (comment) => comment.post, {eager: true})

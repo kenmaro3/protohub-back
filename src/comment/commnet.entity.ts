@@ -29,9 +29,9 @@ export class Comment{
     @Column({nullable: true})
     time_cost: string;
 
-    @ManyToOne(() => User, (user) => user.comments, {eager: true})
+    @ManyToOne(() => User, (user) => user.comments, {eager: true, onDelete:'CASCADE'})
     user: number
 
-    @ManyToOne(() => Post, (post) => post.comments)
+    @ManyToOne(() => Post, (post) => post.comments, {onDelete:'CASCADE'})
     post: number
 }
