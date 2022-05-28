@@ -1,6 +1,6 @@
 import {HttpException, HttpStatus, Injectable, UnauthorizedException} from "@nestjs/common";
 import {TokenService} from "../token/token.service";
-import {UserDto} from "../user/dto/user.dto";
+import {CreateUserDto} from "../user/dto/create-user.dto";
 import {UserService} from "../user/user.service";
 import * as bcrypt from 'bcryptjs'
 import * as uuid from 'uuid'
@@ -13,7 +13,7 @@ export class SecurityService{
                 private userService: UserService) {
     }
 
-    async registration(userDto: UserDto){
+    async registration(userDto: CreateUserDto){
         const candidate = await this.userService.getByEmail(userDto.email)
         if(candidate){
             console.log("registration if candidate")

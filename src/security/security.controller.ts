@@ -12,7 +12,7 @@ import {
     ValidationPipe
 } from "@nestjs/common";
 import {SecurityService} from "./security.service";
-import {UserDto} from "../user/dto/user.dto";
+import { CreateUserDto } from "src/user/dto/create-user.dto";
 import {LoginUserDto} from "../user/dto/login.user.dto";
 import {UpdateUserDto} from "../user/dto/update-user.dto";
 import {FileFieldsInterceptor} from "@nestjs/platform-express";
@@ -27,7 +27,7 @@ export class SecurityController{
 
     @UsePipes(ValidationPipe)
     @Post('/register')
-    async register(@Body() userDto: UserDto, @Res() res){
+    async register(@Body() userDto: CreateUserDto, @Res() res){
         const userData = await this.securityService.registration(userDto)
         res.cookie('refresh_token', userData.refresh_token, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true})
         res.json(userData)

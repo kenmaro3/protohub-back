@@ -2,7 +2,7 @@ import {Injectable} from "@nestjs/common";
 import {Repository, Like as LIKE} from "typeorm";
 import {User} from "./user.entity";
 import {InjectRepository} from "@nestjs/typeorm";
-import {UserDto} from "./dto/user.dto";
+import { CreateUserDto } from "./dto/create-user.dto";
 import {UpdateUserDto} from "./dto/update-user.dto";
 import {FileService} from "../file/file.service";
 
@@ -13,7 +13,7 @@ export class UserService{
                 private fileService: FileService) {
     }
 
-    async createUser(userDto: UserDto | User): Promise<User>{
+    async createUser(userDto: CreateUserDto | User): Promise<User>{
         return await this.usersRepository.save(userDto)
     }
 
