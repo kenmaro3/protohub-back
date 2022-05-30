@@ -12,8 +12,8 @@ export const admin = firebaseAdmin.initializeApp({
   credential: firebaseAdmin.credential.cert(serviceAccount)
 })
 //export const storageRef = admin.storage().bucket('gs://post-images-storage.appspot.com')
-// export const storageRef = admin.storage().bucket(process.env.FIREBASE_STORAGE_BUCKET);
-export const storageRef = admin.storage().bucket("gs:/myblog-525f9.appspot.com");
+export const storageRef = admin.storage().bucket(process.env.FIREBASE_STORAGE_BUCKET);
+// export const storageRef = admin.storage().bucket("gs://myblog-525f9.appspot.com");
 
 async function bootstrap() {
   const PORT = process.env.PORT || 5101
