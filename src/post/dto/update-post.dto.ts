@@ -19,6 +19,5 @@ export class UpdatePostDto{
     readonly text: string;
 
     @IsNotEmpty()
-    @IsNumber()
     readonly user_id: number;
 }
