@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 import * as cookieParser from 'cookie-parser';
 import * as firebaseAdmin from 'firebase-admin'
 import * as serviceAccount from '../myblog-525f9-firebase-adminsdk-wad5t-29b4da572a.json'
-require('dotenv').config();
+// require('dotenv').config();
 
 //const urlPrefix = `https://storage.googleapis.com/${process.env.REACT_APP_FIREBASE_STORAGE_BUCKET}/`;
 
@@ -22,7 +22,7 @@ async function bootstrap() {
   //app.enableCors({credentials: true, origin: process.env.CLIENT_URL});
   app.enableCors({
     //origin: 'http://localhost:3000',
-    origin: [process.env.CLIENT_URL, "https://www.protohub.tech"],
+    origin: [process.env.CLIENT_URL, "https://www.protohub.tech", "http://localhost:3000", "https://protohub.tech"],
     //allowedHeaders: 'Origin, X-Requested-With, Content-Type, Access-Control-Allow-Origin,  Accept',
     credentials: true,
   });
