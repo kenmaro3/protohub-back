@@ -21,8 +21,9 @@ async function bootstrap() {
   app.use(cookieParser());
   //app.enableCors({credentials: true, origin: process.env.CLIENT_URL});
   app.enableCors({
-    //origin: 'http://localhost:3000',
-    origin: [process.env.CLIENT_URL, "https://www.protohub.tech", "http://localhost:3000", "https://protohub.tech"],
+    origin: ["protohub.tech", "https://protohub.tech", "http://localhost", 'http://localhost:3000', "https://protohub.tech:80", "https://protohub.tech:443", "https://protohub.tech", "http://protohub.tech:80", "http://protohub.tech:443", "http://protohub.tech"],
+    // allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
+    //origin: [process.env.CLIENT_URL, "https://www.protohub.tech", "http://localhost:3000", "https://protohub.tech"],
     //allowedHeaders: 'Origin, X-Requested-With, Content-Type, Access-Control-Allow-Origin,  Accept',
     credentials: true,
   });
